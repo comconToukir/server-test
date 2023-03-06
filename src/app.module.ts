@@ -4,13 +4,14 @@ import { AppService } from "./app.service";
 import { UsersModule } from "./users/users.module";
 import { ConfigModule } from "@nestjs/config";
 import { MongooseModule } from "@nestjs/mongoose";
+import { Constants } from "./utils/Constants";
 
 @Module({
   imports: [
     UsersModule,
     ConfigModule.forRoot(),
     MongooseModule.forRoot(
-      "mongodb+srv://rafin:CHoOPq3tTfzNx1DM@cluster0.khgm0kt.mongodb.net/test"
+      Constants.DATABASE
     ),
   ],
   controllers: [AppController],
